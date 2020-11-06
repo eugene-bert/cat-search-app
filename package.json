@@ -1,48 +1,22 @@
 {
-  "name": "voting-app",
+  "name": "cat-api",
   "version": "1.0.0",
-  "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--,      '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'     -----------------------------------------------------------------",
-  "main": "app.js",
+  "private": true,
   "scripts": {
-    "dev": "webpack -wd",
-    "start": "node app.js",
-    "build": "nodemon --exec babel-node app.js --ignore public/",
-    "webpack": "webpack --config webpack.config.js --progress --colors",
-    "postinstall": "npm run webpack"
+    "dev": "nodemon src/index.js --exec \"node --preserve-symlinks -r dotenv/config\""
   },
-  "author": "",
+  "author": "Eugene Biercowicz <eugene.biercowicz@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-eslint": "^7.0.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-2": "^6.17.0",
-    "eslint": "^3.7.1",
-    "eslint-plugin-react": "^6.4.0",
-    "nodemon": "^1.11.0",
-    "webpack": "^1.13.2"
-  },
   "dependencies": {
-    "axios": "^0.16.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-stage-1": "^6.1.18",
-    "body-parser": "^1.18.3",
-    "cookie-parser": "^1.4.3",
-    "ejs": "^2.5.7",
-    "express": "^4.15.4",
-    "express-session": "^1.15.5",
-    "mongoose": "^4.11.9",
-    "morgan": "^1.8.2",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-modal": "^3.3.2",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "redux-actions": "^2.2.1",
-    "redux-thunk": "^2.2.0",
-    "webpack": "^1.13.2"
+    "apollo-server-express": "^2.4.0",
+    "bcrypt": "^3.0.4",
+    "deepmerge": "^3.1.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.10",
+    "throng": "^4.0.0",
+    "nodemon": "^1.18.9"
   }
 }

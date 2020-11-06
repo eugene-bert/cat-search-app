@@ -1,25 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+const throng = require('throng')
+const mongoose = require('mongoose')
+const url = require('url')
+const app = require('./app')
+const config = require('./config')
 
-import App from './components/App';
+const mongoHost = new url.URL(config.MONGODB_URI).host
 
-import reducers from './reducers/index';
+const startServer = async function () {
+  const mongooseOptions = {
+    readPreference: 'primaryPreferred',
+    useNewUrlParser: true,
+    promiseLibrary: global.Promise
+  }
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+  try {
+    await Promise.all([
+      mongoose.connect(config.MONGODB_URI, mongooseOptions),
+      app.listen(config.PORT)
+    ])
 
-ReactDOM.render(
-  <Provider store={store}>
-    	<BrowserRouter>
-   		<div>
-   			<Switch>
-   				<Route path="/" component={App} />
-   			</Switch>
-   		</div>
-   	</BrowserRouter>
-  </Provider>
-  ,document.getElementById('root')
-);
+    console.log(`Server has started on port: ${config.PORT}, connected to mongo at ${mongoHost}, url: http://localhost:${config.PORT}/`)
+  } catch (error) {
+    console.error(`Could not start the app: `, error)
+  }
+}
+
+throng({
+  workers: config.WORKERS,
+  lifetime: Infinity
+}, startServer)
