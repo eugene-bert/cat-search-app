@@ -1,11 +1,7 @@
 const Cat = require('../../../models/cat')
 
 const cats = async (_) => {
-  const cats = await Cat
-    .find()
-    .populate('createdBy')
-
-  return cats
+  return Cat.find()
 }
 
 module.exports = cats

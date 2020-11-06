@@ -2,20 +2,30 @@ const { gql } = require('apollo-server-express')
 
 const typeDefs = gql`
   extend type Query {
-    cat(id: ID!): Cat @isAuthenticated
-    cats: [Cat] @isAuthenticated
+    cat(id: ID!): Cat
+    cats: [Cat]
+    findCatByName(name: String!): [Cat]
+    catsPaginate(page_size: Int!, page_num: Int!): [Cat]
+    sortCats(property: String, order: Int): [Cat]
   }
 
   extend type Mutation {
     createCat(
       name: String!
+      breed: String
+      weight: Int
+    ): Cat
+
+    deleteCat(
+      id: ID!
     ): Cat
   }
 
   type Cat {
     id: ID!
     name: String!
-    createdBy: User!
+    breed: String
+    weight: Int
     created: DateTime!
   }
 `

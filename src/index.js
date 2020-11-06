@@ -19,7 +19,9 @@ const startServer = async function () {
       app.listen(config.PORT)
     ])
 
-    console.log(`Server has started on port: ${config.PORT}, connected to mongo at ${mongoHost}, url: http://localhost:${config.PORT}/`)
+    console.log(`⏳ Server has started on port: ${config.PORT}`)
+    console.log(`🌱 Connected to mongo at  ${mongoHost}`)
+    console.log(`🍇 Graphql_url: http://localhost:${config.PORT}/graphql`)
   } catch (error) {
     console.error(`Could not start the app: `, error)
   }

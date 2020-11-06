@@ -1,7 +1,6 @@
 const { gql, makeExecutableSchema } = require('apollo-server-express')
 const deepmerge = require('deepmerge')
 
-const directives = require('../directives')
 const scalars = require('../scalars')
 
 const globalTypeDefs = gql`
@@ -14,8 +13,7 @@ const makeExecutableSchemaFromModules = ({
 }) => {
   let typeDefs = [
     globalTypeDefs,
-    ...scalars.typeDefs,
-    ...directives.typeDefs
+    ...scalars.typeDefs
   ]
 
   let resolvers = {
@@ -33,10 +31,7 @@ const makeExecutableSchemaFromModules = ({
 
   return makeExecutableSchema({
     typeDefs,
-    resolvers,
-    schemaDirectives: {
-      ...directives.schemaDirectives
-    }
+    resolvers
   })
 }
 

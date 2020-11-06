@@ -1,11 +1,10 @@
 const { makeExecutableSchemaFromModules } = require('../utils/modules')
 
-const auth = require('./auth')
-const cats = require('./cats')
+
+const cat = require('./cat')
 
 module.exports = makeExecutableSchemaFromModules({
   modules: [
-    auth,
-    cats
+    cat
   ]
 })

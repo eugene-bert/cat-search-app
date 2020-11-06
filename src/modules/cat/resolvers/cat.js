@@ -5,12 +5,12 @@ const cat = async (_, args) => {
   const { id } = args
   const cat = await Cat
     .findById(id)
-    .populate('createdBy')
 
   if (!cat) {
     throw new ApolloError('Not found')
   }
 
+  console.log(cat)
   return cat
 }
 

@@ -1,17 +1,15 @@
 const Cat = require('../../../models/cat')
 
 const createCat = async (_, {
-  name
-}, { user }) => {
-  const userId = user._id.toString()
-
+  name, breed, weight
+}) => {
   const newCat = new Cat({
     name,
-    createdBy: userId
+    breed,
+    weight
   })
 
   await newCat
-    .populate('createdBy')
     .execPopulate()
 
   return newCat.save()
