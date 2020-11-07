@@ -6,6 +6,7 @@ const typeDefs = gql`
     cats: [Cat]
     findCatByName(name: String!): [Cat]
     catsPaginate(page_size: Int!, page_num: Int!): [Cat]
+    catsPaginateSort(property: String, order: Int, page_size: Int!, page_num: Int!): [Cat]
     sortCats(property: String, order: Int): [Cat]
   }
 

@@ -5,6 +5,7 @@ const createCat = require('./create-cat')
 const deleteCat = require('./delete-cat')
 const catsPaginate = require('./cats-paginate')
 const findCatByName = require('./find-cat-by-name')
+const catsPaginateSort = require('./cats-paginate-sort');
 
 const resolvers = {
   Query: {
@@ -12,6 +13,7 @@ const resolvers = {
     cats,
     findCatByName,
     catsPaginate,
+    catsPaginateSort,
     sortCats
   },
   Mutation: {
