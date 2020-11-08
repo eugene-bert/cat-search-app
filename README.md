@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="cat" src="https://raw.githubusercontent.com/eugene-bert/cat-search-app/main/cat.gif" width="480">
+</p>
+
 ## About
 Backend application for cats searching
 
