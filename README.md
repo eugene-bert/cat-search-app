@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="cat" src="https://raw.githubusercontent.com/eugene-bert/cat-search-app/main/cat.gif" width="480">
+  <img src="https://i.giphy.com/media/ES4Vcv8zWfIt2/source.gif" onerror="this.onerror=null;this.src='https://i.giphy.com/ES4Vcv8zWfIt2.gif';" alt="">
 </p>
 
 ## About
