@@ -3,7 +3,7 @@
 </p>
 
 ## About
-Backend application for cats searching
+Backend application for cats searching - (Graphql / REST API)
 
 - Adding a new cat
 - List all cats
