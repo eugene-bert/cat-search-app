@@ -23,6 +23,7 @@ const startServer = async function () {
     console.log(`🌱 Connected to mongo at  ${mongoHost}`)
     console.log(`🍇 Graphql_url: http://localhost:${config.PORT}/graphql`)
     console.log(`🐈 cat-api_url: http://localhost:${config.PORT}/cat-api/getCats`)
+    console.log(`😼 frontend_url: http://localhost:${config.PORT}/frontend-app`)
   } catch (error) {
     console.error(`Could not start the app: `, error)
   }
