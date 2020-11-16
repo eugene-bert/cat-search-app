@@ -17,7 +17,6 @@ export default function SearchBar() {
 
   return (
     <Box className='search-bar'>
-      {console.log(cats)}
       <Autocomplete
         className='search-bar__input'
         options={Array.from(cats)}

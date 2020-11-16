@@ -5,9 +5,11 @@ import thunk from 'redux-thunk';
 
 const initialState = {
   data: {},
+  sortedData: {},
   errors: {},
   input: '',
-  exist: -1
+  exist: -1,
+  imageData: ""
 };
 
 export const reducer = (state= initialState, action) => {
@@ -16,6 +18,11 @@ export const reducer = (state= initialState, action) => {
       return {
         ...state,
         data: action.payload.data,
+      };
+    case 'PUT_SORTED_DATA':
+      return {
+        ...state,
+        sortedData: action.payload.data,
       };
     case 'LOAD_DATA_FAILED': {
       return {
@@ -28,6 +35,12 @@ export const reducer = (state= initialState, action) => {
         ...state,
         input: action.payload.input,
         exist: action.payload.exist
+      }
+    }
+    case 'PUT_IMAGE_DATA': {
+      return  {
+        ...state,
+        imageData: action.payload.data[0].url
       }
     }
     default:
