@@ -17,6 +17,9 @@ const useStyles = makeStyles({
   image: {
     width: "60%",
     margin: "auto"
+  },
+  imageArea: {
+    objectFit: "contain !important"
   }
 });
 
@@ -34,6 +37,7 @@ export const CatImage = props => {
     <Fragment>
       <div className={classes.image}>
         <Image
+          className={classes.imageArea}
           src={imageData}
           aspectRatio={(4/3)}
         />
